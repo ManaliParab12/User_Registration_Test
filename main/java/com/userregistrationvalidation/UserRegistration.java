@@ -19,7 +19,7 @@ public class UserRegistration {
         System.out.println("Welcome to User Registration Validation");
     }
 
-    public boolean validateFirstName(String firstName) {
+    public boolean validateFirstName(String firstName) throws UserException {
         return (Pattern.matches(firstNamePattern,firstName));
     }
 
