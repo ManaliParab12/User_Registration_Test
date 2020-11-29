@@ -9,6 +9,7 @@ public class UserRegistration {
     String emailPattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
     String mobilePattern = "((91){1})[ ]([98765]{1})([0-9]{9})$";
     String passwordPatternFirstRule = "[a-zA-z]{8,32}$";
+    String passwordPatternSecondRule = "(?=.*[A-Z])[a-zA-Z]{8,32}$";
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Validation");
@@ -30,7 +31,12 @@ public class UserRegistration {
         return (Pattern.matches(mobilePattern,mobileNumber));
     }
 
-    public boolean validatePasswordRuleOne((String passwordOne) {
+    public boolean validatePasswordRuleOne(String passwordOne) {
         return (Pattern.matches(passwordPatternFirstRule,passwordOne));
     }
+
+    public boolean validatePasswordRuleTwo(String passwordTwo) {
+        return (Pattern.matches(passwordPatternSecondRule,passwordTwo));
+    }
+
 }
