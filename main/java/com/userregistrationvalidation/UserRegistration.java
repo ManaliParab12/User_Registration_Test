@@ -11,6 +11,7 @@ public class UserRegistration {
     String passwordPatternFirstRule = "[a-zA-z]{8,32}$";
     String passwordPatternSecondRule = "(?=.*[A-Z])[a-zA-Z]{8,32}$";
     String passwordPatternThreeRule = "(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,32}$";
+    String passwordPatternFourRule = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!?#$]{1})[a-zA-Z0-9!?#$]{8,32}$";
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Validation");
@@ -42,6 +43,10 @@ public class UserRegistration {
 
     public boolean validatePasswordRuleThree(String passwordThree) {
         return (Pattern.matches(passwordPatternThreeRule,passwordThree));
+    }
+
+    public boolean validatePasswordRuleFour(String passwordFour) {
+        return (Pattern.matches(passwordPatternFourRule,passwordFour));
     }
 
 }
