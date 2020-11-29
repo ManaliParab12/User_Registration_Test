@@ -3,7 +3,7 @@ package com.userregistrationvalidation;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UserTest {
+public class UserTest  {
 
     UserRegistration userregistration = new UserRegistration();
 
