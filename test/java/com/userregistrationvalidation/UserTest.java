@@ -22,4 +22,20 @@ public class UserTest {
         boolean firstName = userregistration.validateFirstName(name);
         Assert.assertFalse(firstName);
     }
+
+    //TEST TO CHECK  LAST NAME VALID
+    @Test
+    public void givenLastName_whenValid_thenReturn() {
+        String name = "Parab";
+        boolean lastName = userregistration.validateLastName(name);
+        Assert.assertTrue(lastName);
+    }
+
+    //TEST TO CHECK LAST NAME INVALID
+    @Test
+    public void givenLastName_whenInvalid_thenReturn() {
+        String name = "parab";
+        boolean lastName = userregistration.validateLastName(name);
+        Assert.assertFalse(lastName);
+    }
 }
