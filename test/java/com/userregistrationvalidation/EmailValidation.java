@@ -11,7 +11,7 @@ import org.junit.runners.Parameterized;
 public class EmailValidation {
      String emailAddress;
      boolean expected;
-     
+
     public EmailValidation(String emailAddress, boolean expected) {
         this.emailAddress = emailAddress;
         this.expected = expected;
