@@ -70,4 +70,68 @@ public class UserTest {
         boolean mobileNumber = userregistration.validateMobileNumber(number);
         Assert.assertFalse(mobileNumber);
     }
+
+    //TEST TO CHECK PASSWORD RULE ONE VALID
+    @Test
+    public void givenPassword_whenMinimum8Characters_thenReturnTrue() {
+        String password = "manaliparab";
+        boolean passwordOne = userregistration.validatePasswordRuleOne(password);
+        Assert.assertTrue(passwordOne);
+    }
+
+    //TEST TO CHECK PASSWORD RULE ONE INVALID
+     @Test
+    public void givenPassword_whenNotMinimum8Characters_thenReturnFalse() {
+        String password = "manali";
+        boolean passwordOne = userregistration.validatePasswordRuleOne(password);
+        Assert.assertFalse(passwordOne);
+    }
+
+     //TEST TO CHECK PASSWORD RULE TWO VALID
+    @Test
+    public void givenPassword_whenAtLeast1UpperCase_thenReturnTrue() {
+        String password = "Manaliparab";
+        boolean passwordTwo = userregistration.validatePasswordRuleTwo(password);
+        Assert.assertTrue(passwordTwo);
+    }
+     //TEST TO CHECK PASSWORD RULE TWO INVALID
+    @Test
+    public void givenPassword_whenNotContainUpperCase_thenReturnFalse() {
+        String password = "manaliparab";
+        boolean passwordTwo = userregistration.validatePasswordRuleTwo(password);
+        Assert.assertFalse(passwordTwo);
+    }
+
+    //TEST TO CHECK PASSWORD RULE THREE VALID
+    @Test
+    public void givenPassword_whenAtLeast1Number_thenReturnTrue() {
+        String password = "Manali12";
+        boolean passwordThree= userregistration.validatePasswordRuleThree(password);
+        Assert.assertTrue(passwordThree);
+    }
+
+
+    //TEST TO CHECK PASSWORD RULE THREE INVALID
+    @Test
+    public void givenPassword_whenNotContainNumber_thenReturnFalse() {
+        String password = "manaliparab";
+        boolean passwordThree = userregistration.validatePasswordRuleThree(password);
+        Assert.assertFalse(passwordThree);
+    }
+
+    //TEST TO CHECK PASSWORD RULE FOURE VALID
+    @Test
+        public void givenPassword_whenHasSpecialCharacters_thenReturnTrue() {
+        String password = "Manali#12";
+        boolean passwordFoure = userregistration.validatePasswordRuleFour(password);
+        Assert.assertTrue(passwordFoure);
+    }
+
+    //TEST TO CHECK PASSWORD RULE FOURE INVALID
+    @Test
+    public void givenPassword_whenNotContainSpecialCharacters_thenReturnFalse() {
+        String password = "manali123";
+        boolean passwordFoure = userregistration.validatePasswordRuleFour(password);
+        Assert.assertFalse(passwordFoure);
+   }
 }
