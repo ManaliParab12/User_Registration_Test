@@ -1,5 +1,6 @@
 package com.userregistrationvalidation;
 
+import java.sql.SQLOutput;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
@@ -20,6 +21,7 @@ public class UserRegistration {
     }
 
     public boolean validateFirstName(String firstName) throws UserException {
+<<<<<<< HEAD
         return (Pattern.matches(firstNamePattern,firstName));
     }
 
@@ -51,6 +53,47 @@ public class UserRegistration {
         return (Pattern.matches(passwordPatternFourRule,passwordFour));
     }
 
+=======
+        try {
+            if(Pattern.matches(firstNamePattern,firstName)) {
+                return true;
+            } else {
+                System.out.println("Invalid Name");
+            }
+                throw new UserException("Enter Valid FirstName", UserException.ExceptionType.Invalid_First_Name);
+            }
+            }
+        }
+
+    public boolean validateLastName(String lastName) {
+        return (Pattern.matches(lastNamePattern,lastName));
+    }
+
+    public boolean validateEmailID(String emailID) {
+        return (Pattern.matches(emailPattern,emailID));
+    }
+
+    public boolean validateMobileNumber(String mobileNumber) {
+        return (Pattern.matches(mobilePattern,mobileNumber));
+    }
+
+    public boolean validatePasswordRuleOne(String passwordOne) {
+        return (Pattern.matches(passwordPatternFirstRule,passwordOne));
+    }
+
+    public boolean validatePasswordRuleTwo(String passwordTwo) {
+        return (Pattern.matches(passwordPatternSecondRule,passwordTwo));
+    }
+
+    public boolean validatePasswordRuleThree(String passwordThree) {
+        return (Pattern.matches(passwordPatternThreeRule,passwordThree));
+    }
+
+    public boolean validatePasswordRuleFour(String passwordFour) {
+        return (Pattern.matches(passwordPatternFourRule,passwordFour));
+    }
+
+>>>>>>> UC1_ValidateFirstName
     public boolean validateSampleEmail(String email) {
 
         return (Pattern.matches(sampleEmailPattern,email));
