@@ -21,82 +21,71 @@ public class UserRegistration {
     }
 
     public boolean validateFirstName(String firstName) throws UserException {
-<<<<<<< HEAD
-        return (Pattern.matches(firstNamePattern,firstName));
-    }
-
-    public boolean validateLastName(String lastName) {
-        return (Pattern.matches(lastNamePattern,lastName));
-    }
-
-    public boolean validateEmailID(String emailID) {
-        return (Pattern.matches(emailPattern,emailID));
-    }
-
-    public boolean validateMobileNumber(String mobileNumber) {
-        return (Pattern.matches(mobilePattern,mobileNumber));
-    }
-
-    public boolean validatePasswordRuleOne(String passwordOne) {
-        return (Pattern.matches(passwordPatternFirstRule,passwordOne));
-    }
-
-    public boolean validatePasswordRuleTwo(String passwordTwo) {
-        return (Pattern.matches(passwordPatternSecondRule,passwordTwo));
-    }
-
-    public boolean validatePasswordRuleThree(String passwordThree) {
-        return (Pattern.matches(passwordPatternThreeRule,passwordThree));
-    }
-
-    public boolean validatePasswordRuleFour(String passwordFour) {
-        return (Pattern.matches(passwordPatternFourRule,passwordFour));
-    }
-
-=======
-        try {
-            if(Pattern.matches(firstNamePattern,firstName)) {
-                return true;
-            } else {
-                System.out.println("Invalid Name");
-            }
-                throw new UserException("Enter Valid FirstName", UserException.ExceptionType.Invalid_First_Name);
-            }
-            }
+        if (Pattern.matches(firstNamePattern, firstName)) {
+            return true;
+        } else {
+            throw new UserException("Invalid First Name", UserException.ExceptionType.Invalid_First_Name);
         }
-
-    public boolean validateLastName(String lastName) {
-        return (Pattern.matches(lastNamePattern,lastName));
     }
 
-    public boolean validateEmailID(String emailID) {
-        return (Pattern.matches(emailPattern,emailID));
+    public boolean validateLastName(String lastName) throws UserException {
+        if (Pattern.matches(lastNamePattern,lastName)) {
+            return true;
+        } else {
+            throw new UserException("Invalid Last Name", UserException.ExceptionType.Invalid_Last_Name);
+        }
     }
 
-    public boolean validateMobileNumber(String mobileNumber) {
-        return (Pattern.matches(mobilePattern,mobileNumber));
+    public boolean validateEmailID(String emailID) throws UserException {
+        if (Pattern.matches(emailPattern,emailID)) {
+            return true;
+        } else {
+            throw new UserException("Invalid Email ID", UserException.ExceptionType.Invalid_Email);
+        }
     }
 
-    public boolean validatePasswordRuleOne(String passwordOne) {
-        return (Pattern.matches(passwordPatternFirstRule,passwordOne));
+    public boolean validateMobileNumber(String mobileNumber) throws UserException {
+        if (Pattern.matches(mobilePattern,mobileNumber)) {
+            return true;
+        } else {
+            throw new UserException("Invalid First Name", UserException.ExceptionType.Invalid_Mobile);
+        }
     }
 
-    public boolean validatePasswordRuleTwo(String passwordTwo) {
-        return (Pattern.matches(passwordPatternSecondRule,passwordTwo));
+    public boolean validatePasswordRuleOne(String passwordOne) throws UserException {
+        if (Pattern.matches(passwordPatternFirstRule,passwordOne)) {
+            return true;
+        } else {
+            throw new UserException("Invalid Password", UserException.ExceptionType.Invalid_Password);
+        }
     }
 
-    public boolean validatePasswordRuleThree(String passwordThree) {
-        return (Pattern.matches(passwordPatternThreeRule,passwordThree));
+    public boolean validatePasswordRuleTwo(String passwordTwo) throws UserException {
+        if (Pattern.matches(passwordPatternSecondRule,passwordTwo)){
+            return true;
+        } else {
+            throw new UserException("Invalid Password", UserException.ExceptionType.Invalid_Password);
+        }
     }
 
-    public boolean validatePasswordRuleFour(String passwordFour) {
-        return (Pattern.matches(passwordPatternFourRule,passwordFour));
+    public boolean validatePasswordRuleThree(String passwordThree) throws UserException {
+        if (Pattern.matches(passwordPatternThreeRule,passwordThree)) {
+            return true;
+        } else {
+            throw new UserException("Invalid Password", UserException.ExceptionType.Invalid_Password);
+        }
     }
 
->>>>>>> UC1_ValidateFirstName
+    public boolean validatePasswordRuleFour(String passwordFour) throws UserException {
+        if (Pattern.matches(passwordPatternFourRule,passwordFour)) {
+            return true;
+        } else {
+            throw new UserException("Invalid Password", UserException.ExceptionType.Invalid_Password);
+        }
+    }
+
     public boolean validateSampleEmail(String email) {
 
         return (Pattern.matches(sampleEmailPattern,email));
     }
-
 }
