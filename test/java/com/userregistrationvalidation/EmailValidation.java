@@ -9,14 +9,9 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class EmailValidation {
-<<<<<<< HEAD
      String emailAddress;
      boolean expected;
-=======
-    String emailAddress;
-    boolean expected;
->>>>>>> UC1_ValidateFirstName
-
+     
     public EmailValidation(String emailAddress, boolean expected) {
         this.emailAddress = emailAddress;
         this.expected = expected;
