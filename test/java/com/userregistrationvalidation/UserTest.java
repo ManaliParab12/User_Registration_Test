@@ -54,4 +54,20 @@ public class UserTest {
         boolean emailName = userregistration.validateEmailID(emailID);
         Assert.assertFalse(emailName);
     }
+
+    //TEST TO CHECK MOBILE NUMBER VALID
+    @Test
+    public void givenMobileNumber_whenValid_thenReturnTrue() {
+        String number = "91 9919819801";
+        boolean mobileNumber = userregistration.validateMobileNumber(number);
+        Assert.assertTrue(mobileNumber);
+    }
+
+    //TEST TO CHECK MOBILE NUMBER INVALID
+    @Test
+    public void givenMobileNumber_whenInvalid_thenReturnFalse() {
+        String number = "9919813";
+        boolean mobileNumber = userregistration.validateMobileNumber(number);
+        Assert.assertFalse(mobileNumber);
+    }
 }
